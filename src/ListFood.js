@@ -1,7 +1,7 @@
 
 function ListFood (props){
     return (
-      <ul>
+      <ul className="ListFood">
             {props.children} 
       </ul>
     );

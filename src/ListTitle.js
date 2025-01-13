@@ -1,8 +1,9 @@
+import  './ListTItle.css';
 
-function ListTitle(){
+function ListTitle({ total, completed }){
     return (
-      <h1>
-          You have bought 3 out of 5 groceries
+      <h1 className='ListTitle'>
+          You have bought <span> {completed}</span> out of <span>{total} </span>groceries
       </h1>
     );
   }
