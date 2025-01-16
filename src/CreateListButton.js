@@ -6,6 +6,7 @@ function CreateListButton(){
         (event)=> {
           console.log('Le diste click')
           console.log(event)
+          console.log(event.target)
         }
         }
         >+</button>

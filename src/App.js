@@ -14,17 +14,56 @@ const defaultTodos =[
 ];
 
 function App() {
+
+const [todos, setTodos]= React.useState(defaultTodos);
+const [searchValue, setSearchValue ] = React.useState('');
+
+const completedTodos = todos.filter(todos => !!todos.completed).length;
+const totalTodos = todos.length;
+
+const searchedTodos = todos.filter(
+    (todo) => {
+      const todoText = todo.text.toLowerCase();
+      const searchedText = searchValue.toLocaleLowerCase();
+      return todoText.includes(searchedText);
+    }
+);
+
+  const completeTodo = (text) =>{
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text === text
+      );
+    newTodos[todoIndex].completed = true;
+    setTodos(newTodos);
+  }
+
+  const deleteTodo = (text) =>{
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text === text
+      );
+    newTodos.splice(todoIndex, 1);
+    setTodos(newTodos);
+  }
+
  return (
   <React.Fragment>  
-      <ListTitle  completed={16}  total={30} />
-      <ListSearch />
+      <ListTitle  completed={completedTodos}  total={totalTodos} />
+      <ListSearch
+         searchValue={searchValue}
+         setSearchValue={setSearchValue} 
+      />
 
       <ListFood>
-          {defaultTodos.map(todo => (
+          {searchedTodos.map(todo => (
                         <TodoItem 
                          key={todo.text} 
                         text={todo.text}
-                        completed={todo.completed}/>
+                        completed={todo.completed}
+                        onComplete={() => completeTodo(todo.text)}
+                        onDelete={() => deleteTodo(todo.text)}
+                        />
           )) }
       </ListFood>
       <CreateListButton />
