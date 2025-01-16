@@ -3,7 +3,7 @@ import { ListSearch } from './ListSearch';
 import { ListFood } from './ListFood';
 import { TodoItem } from './TodoItem';
 import { CreateListButton } from './CreateListButton';
-import './App.css';
+
 import React from 'react';
 
 // const defaultTodos =[
