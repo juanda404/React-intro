@@ -7,7 +7,8 @@ import { CreateListButton } from '../CreateListButton';
 
 
 function AppUI({
- 
+    loading,
+    error,
     searchValue,
     setSearchValue,
     completedTodos,
@@ -25,6 +26,10 @@ function AppUI({
             />
       
             <ListFood>
+                {loading && <p>stay loading...</p>}
+                {error  && <p>Wake up, we have a  error</p>}
+                {!loading && !error && searchedTodos.length === 0 && <p>No be task para show</p>}
+
                 {searchedTodos.map(todo => (
                               <TodoItem 
                                key={todo.text} 
