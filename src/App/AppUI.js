@@ -3,6 +3,9 @@ import { ListSearch } from '../ListSearch';
 import { ListFood } from '../ListFood';
 import { TodoItem } from '../TodoItem';
 import { CreateListButton } from '../CreateListButton';
+import { TodosLoading } from '../TodosLoading';
+import { TodosError } from '../TodosError';
+import { EmptyTodos } from '../EmptyTodos';
 
 
 
@@ -26,9 +29,15 @@ function AppUI({
             />
       
             <ListFood>
-                {loading && <p>stay loading...</p>}
-                {error  && <p>Wake up, we have a  error</p>}
-                {!loading && !error && searchedTodos.length === 0 && <p>No be task para show</p>}
+                {loading && (
+                    <>
+                        <TodosLoading />
+                        <TodosLoading />
+                        <TodosLoading />
+                    </>
+                        )}
+                {error  && <TodosError />}
+                {!loading && !error && searchedTodos.length === 0 && <EmptyTodos />}
 
                 {searchedTodos.map(todo => (
                               <TodoItem 
