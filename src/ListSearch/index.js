@@ -1,10 +1,12 @@
 import React from 'react';
-import './ListSearch.css'
-function ListSearch({
-  searchValue,
-  setSearchValue,
-}){
+import './ListSearch.css';
+import { TodoContext } from '../TodoContext';
 
+function ListSearch(){
+    const {
+      searchValue,
+      setSearchValue,
+    } = React.useContext(TodoContext);
     return (
       <input 
       placeholder="Rice with potato"
