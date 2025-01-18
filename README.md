@@ -1,12 +1,55 @@
-# Repositorio base del Curso de Introducción a React.js en Platzi
+# React Intro - Aplicación desplegada
 
-¡Hola, Platzinauta!
+### Descripción
+En este repositorio encontrarás el código organizado de mi aplicación de introducción a React, la cual está desplegada y accesible públicamente.
 
-En este repositorio encontrarás el código de todas las clases del [Curso de Introducción a React.js](https://platzi.com/reactjs). Para empezar solo debes clonar este repositorio (`git clone`), instalar sus dependencias (`npm i`) y ejecutar la aplicación (`npm start`).
+---
+### URL del despliegue
+Puedes acceder a la aplicación desplegada a través de este enlace:
+- **[React Intro Deploy](https://juanda404.github.io/React-intro/)**
 
-La rama principal contiene el código con el que eempezamos el curso. En las demás ramas encontrarás el código de las siguientes clases y finalmente el deploy de la aplicación.
+---
+### Detalles del despliegue
+El despliegue se encuentra configurado en la rama **`gh-pages`** del repositorio, utilizando GitHub Pages para la publicación.
 
-¡Mucha suerte aprendiendo React! #NuncaParesDeAprender
+---
+
+### Estructura del proyecto
+```
+├── src/          # Código fuente de la aplicación
+├── public/       # Archivos estáticos y plantilla HTML
+├── package.json  # Dependencias y scripts
+└── README.md     # Documentación
+```
+---
+### Instalación y uso local
+Si deseas probar el proyecto localmente, sigue estos pasos:
+
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/juanda404/React-intro.git
+   ```
+
+2. **Instalar dependencias:**
+   ```bash
+   npm install
+   ```
+
+3. **Iniciar el servidor de desarrollo:**
+   ```bash
+   npm start
+   ```
+---
+
+### Contribuciones
+Si deseas contribuir a este proyecto:
+1. Haz un fork del repositorio.
+2. Crea una rama para tus cambios:
+   ```bash
+   git checkout -b mi-nueva-funcionalidad
+   ```
+3. Envía un pull request explicando tus cambios.
+
 
 ## Getting Started with Create React App
 
