@@ -50,7 +50,9 @@ function AppUI(){
                                         />
                                           ))}
                 </ListFood>
-            <CreateListButton />
+            <CreateListButton 
+                setOpenModal={setOpenModal}
+            />
 
             {openModal && (
                 <Modal>
