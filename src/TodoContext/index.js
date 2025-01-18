@@ -13,7 +13,7 @@ function TodoProvider({children}){
       
       const completedTodos = todos.filter(todos => !!todos.completed).length;
       const totalTodos = todos.length;
-      
+      const [openModal, setOpenModal]= React.useState(true);
       const searchedTodos = todos.filter(
           (todo) => {
             const todoText = todo.text.toLowerCase();
@@ -50,6 +50,8 @@ function TodoProvider({children}){
           completeTodo,
           deleteTodo,
           searchedTodos,
+          openModal, 
+          setOpenModal,
         }}>
               {children}
         </TodoContext.Provider>
